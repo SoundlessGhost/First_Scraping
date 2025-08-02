@@ -22,6 +22,7 @@ import { GridPattern } from "@/components/magicui/grid-pattern";
 import { cn } from "@/lib/utils";
 import { Globe } from "@/components/magicui/globe";
 import { AccordionDemo } from "@/components/frequently-asked-questions";
+import DataCollectionUsesCases from "@/components/data-collection-uses-cases";
 
 const components = [
   {
@@ -59,11 +60,7 @@ const components = [
 export default function Home() {
   return (
     <div className="relative overflow-hidden">
-      <div className="fixed top-32 -left-52 z-0 w-[300px] h-[300px] opacity-80 pointer-events-none">
-        <Globe />
-      </div>
-
-      {/* Background Grid */}
+      {/* Grid background now sits right behind hero content */}
       <GridPattern
         squares={[
           [4, 4],
@@ -77,10 +74,15 @@ export default function Home() {
           [10, 15],
         ]}
         className={cn(
-          "[mask-image:radial-gradient(500px_circle_at_center,white,transparent)]",
-          "absolute inset-x-0 inset-y-[-30%] h-[200%] skew-y-12 z-0"
+          "[mask-image:radial-gradient(400px_circle_at_center,white,transparent)]",
+          "absolute top-0 left-0 right-0 h-[100vh] skew-y-6 z-0"
         )}
       />
+
+      {/* Floating Globe (optional visual) */}
+      <div className="fixed top-32 -left-52 z-0 w-[300px] h-[300px] opacity-80 pointer-events-none">
+        <Globe />
+      </div>
 
       {/* Main Content */}
       <div className="relative z-10 mt-48 mx-6 lg:mx-32 mb-10">
@@ -139,7 +141,7 @@ export default function Home() {
           ))}
         </div>
 
-        <div className="flex text-center justify-center mt-20 items-center">
+        <div className="flex text-center justify-center mt-28 items-center">
           <div>
             <h1 className="text-4xl font-medium mb-10">
               One API, Zero Blocks{" "}
@@ -154,8 +156,10 @@ export default function Home() {
           </div>
         </div>
 
-        {/* AccordionDemo */}
+        {/* Data Collection Uses Cases */}
+        <DataCollectionUsesCases />
 
+        {/* FAQ Section */}
         <AccordionDemo />
       </div>
     </div>

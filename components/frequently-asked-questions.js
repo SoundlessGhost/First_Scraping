@@ -8,7 +8,7 @@ import {
 export function AccordionDemo() {
   return (
     <div className="">
-      <p className="text-3xl font-bold text-center my-20 text-neutral-700">
+      <p className="text-3xl font-bold text-center py-10 text-neutral-700">
         Frequently Asked Questions
       </p>
       <Accordion
